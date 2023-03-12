@@ -1,0 +1,56 @@
+{% extends '../base.html' %}
+
+{% block title %}Top movies{% endblock %}
+
+{% block content %}
+{% for m in movie %}
+{% if m.isRecommended %}
+<div style="padding: 24px; background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url({{ m.cover }});background-size: cover; background-attachment: fixed; background-position: center" >
+{% endif %}
+{% endfor %}
+    <div class="recommended mt-5 mb-5" >
+        <div class="container">
+            {% for m in movie %}
+            {% if m.isRecommended %}
+            <div class="card mb-3">
+              <iframe width="100%" height="400" src="{{ m.movieLink }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title nigger">{{ m.movieName }}</h5>
+                <p class="card-text nigger">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text nigger">Rating:{{ m.rating }}</p>
+              </div>
+            </div>
+                        {% else %}
+            <h1>Nothing</h1>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="top-ten">
+        <div class="container">
+            <h2>Top 10 movies</h2>
+            <div class="owl-carousel owl-theme">
+                {% for m in movies %}
+                {% if m.isTopTen %}
+                <div class="item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class = 'nigger'>{{ m.movieName }}</h2>
+                            <a href="{% url 'movieDetail' pk=m.pk %}" class="btn btn-dark">Watch</a>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <h1>Nothing</h1>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="mt-5 mb-5 text-center">
+                <a href="#" class="btn btn-dark">See all</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

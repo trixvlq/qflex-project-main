@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+{% block title %}Qflex{% endblock %}
+{% block content %}
+    {% for m in movie %}
+    <div id="banner" style="color: #ffffff;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ m.poster }}');
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;">
+        <div class="container">
+            <h1 style = 'padding-bottom:5%'>Current best seller:{{ m.movieName }}</h1>
+            <p style = 'width:100%'>{{ m.description }}</p>
+            <a href="{% url 'allMovies' %}" class="btn btn-outline-light">All movies</a>
+            <a href="{% url 'signUp' %}" class="btn btn-outline-light">Sign up</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,41 @@
+.nigger{
+    color:black;
+}
+#banner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+#banner h1 {
+    font-size: 45px;
+    font-weight: 900;
+}
+#banner p {
+    width: 60%;
+    text-align: justify;
+}
+.size {
+    width: 20vw;
+    height: 40vh;
+}
+@media screen and (max-width: 767px){
+    .size{
+        width:100%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .mobile-dark {
+        background-color: #000;
+    }
+    #banner, #banner p {
+        text-align: center;
+    }
+    #banner p {
+        width: 100%;
+        font-size: 14px;
+    }
+    #banner h1 {
+        font-size: 28px;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,41 @@
+{% extends '../base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="container mt-5 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class = 'nigger'>Sign Up</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label class = "nigger">Username</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class = "nigger">First Name</label>
+                        {{ form.first_name }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class = "nigger">Second Name</label>
+                        {{ form.last_name }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class = "nigger">Email</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class = "nigger">Password</label>
+                        {{ form.password1 }}
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class = "nigger">Repeat the Password</label>
+                        {{ form.password2 }}
+                    </div>
+                    <button class="btn btn-dark">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
